@@ -62,11 +62,11 @@ public class UserController {
     u1 = userService.saveUser(u1);
     ps.setUserToProduct(u1);
 
-    User u2 = new User("User2", "user2@email", "123456", null, List.of(p1, p2));
-    u2 = userService.saveUser(u2);
-    ps.setUserToProduct(u2);
+    // User u2 = new User("User2", "user2@email", "123456", null, List.of(p1, p2));
+    // u2 = userService.saveUser(u2);
+    // ps.setUserToProduct(u2);
 
-    return u2;
+    return u1;
   }
 
   static class UserAuth {
