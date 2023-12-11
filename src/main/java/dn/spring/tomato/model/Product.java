@@ -34,6 +34,9 @@ public class Product {
   @ManyToMany(cascade = CascadeType.ALL)
   List<Tags> tags;
 
+  public Product() {
+  }
+
   public Product(String name, String cookTime, int price, boolean favorite, String origins, double stars,
       String imageUrl, List<Tags> tags) {
     this.name = name;

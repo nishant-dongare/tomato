@@ -10,6 +10,6 @@ import dn.spring.tomato.model.User;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
 
-  @Query("SELECT u from dn.spring.tomato.model.User u WHERE u.email = :email AND u.password = :pass")
-  Optional<User> getUserByEmailAndPass(@Param("email") String email, @Param("pass") String pass);
+  @Query("SELECT u from dn.spring.tomato.model.User u WHERE u.email = :email AND u.passkey = :passkey")
+  Optional<User> getUserByEmailAndPass(@Param("email") String email, @Param("pass") String passkey);
 }

@@ -27,7 +27,7 @@ public class User {
   private String email;
 
   @Column(nullable = false, length = 12)
-  private String password;
+  private String passkey;
 
   @Column
   private String address;
@@ -37,10 +37,10 @@ public class User {
   public User() {
   }
 
-  public User(String name, String email, String password, String address, List<Product> products) {
+  public User(String name, String email, String passkey, String address, List<Product> products) {
     this.name = name;
     this.email = email;
-    this.password = password;
+    this.passkey = passkey;
     this.address = address;
     this.products = products;
   }
@@ -57,8 +57,8 @@ public class User {
     return email;
   }
 
-  public String getPassword() {
-    return password;
+  public String getPasskey() {
+    return passkey;
   }
 
   public String getAddress() {
