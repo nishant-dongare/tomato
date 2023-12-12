@@ -1,5 +1,6 @@
 package dn.spring.tomato.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -83,11 +84,11 @@ public class UserService {
     plist.forEach(p -> p.getTags().forEach(t -> {
       List<Product> pl = t.getProducts();
       if (pl == null) {
-        t.setProducts(List.of(p));
-      } else {
-        pl.add(p);
+        pl = new ArrayList<>();
       }
+      pl.add(p);
       t.setProducts(pl);
+      System.out.println(t.toString());
     }));
 
     user.setProductList(plist);

@@ -40,4 +40,9 @@ public class Tags {
     this.products = products;
   }
 
+  @Override
+  public String toString() {
+    return "Tags [id=" + id + ", tag=" + tag + ", products=" + products + "]";
+  }
+
 }

@@ -23,9 +23,6 @@ public class UserController {
   @Autowired
   private UserService userService;
 
-  @Autowired
-  private ProductService ps;
-
   @GetMapping("/hello")
   public String hello() {
     return "Hello World";
