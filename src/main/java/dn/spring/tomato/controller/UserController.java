@@ -10,9 +10,6 @@ import dn.spring.tomato.service.ProductService;
 import dn.spring.tomato.service.UserService;
 
 import java.util.List;
-import java.util.function.Function;
-import java.util.stream.Stream;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
