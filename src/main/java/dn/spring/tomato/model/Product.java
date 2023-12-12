@@ -37,6 +37,10 @@ public class Product {
   public Product() {
   }
 
+  public int getId() {
+    return id;
+  }
+
   public Product(User user, String name, String cookTime, int price, boolean favorite, String origins, double stars,
       String imageUrl, List<Tags> tags) {
     this.name = name;
@@ -46,12 +50,8 @@ public class Product {
     this.origins = origins;
     this.stars = stars;
     this.imageUrl = imageUrl;
-    this.tags = tags;
     this.user = user;
-  }
-
-  public int getId() {
-    return id;
+    this.tags = tags;
   }
 
   public String getName() {

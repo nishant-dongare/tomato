@@ -51,21 +51,23 @@ public class UserController {
 
   @GetMapping("/test")
   public User test() {
-    // List<Tags> tags = new ArrayList<>();
-    // // tags.add(new Tags("FastFood"));
+    List<Tags> tags = List.of(new Tags("FastFood"), new Tags("FlashFood"));
 
-    List<Tags> tags = List.of(new Tags("FastFood"));
     User u1 = new User("User1", "user1@email", "123456", null);
 
     Product p1 = new Product(u1, "Pizza Pepperoni", "10-20", 10, false, "italy", 4.5,
         "assets/food-1.jpg", tags);
     Product p2 = new Product(u1, "Meatball", "20-30", 20, true, "persia, middle east, china", 4.7, "assets/food-2.jpg",
-        tags);
+        tags.subList(1, 1));
 
-    u1.setProductList(List.of(p1, p2));
+    List<Product> plist = List.of(p1, p2);
 
-    u1 = userService.saveUser(u1);
-    return u1;
+    tags.get(0).setProducts(plist);
+    tags.get(1).setProducts(List.of(plist.get(1)));
+
+    u1.setProductList(plist);
+
+    return userService.saveUser(u1);
   }
 
   static class UserAuth {
