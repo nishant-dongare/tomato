@@ -31,13 +31,13 @@ public class Product {
   @JoinColumn(name = "userId")
   private User user;
 
-  @ManyToMany(cascade = CascadeType.ALL)
+  @ManyToMany(mappedBy = "products", cascade = CascadeType.ALL)
   List<Tags> tags;
 
   public Product() {
   }
 
-  public Product(String name, String cookTime, int price, boolean favorite, String origins, double stars,
+  public Product(User user, String name, String cookTime, int price, boolean favorite, String origins, double stars,
       String imageUrl, List<Tags> tags) {
     this.name = name;
     this.cookTime = cookTime;
@@ -47,6 +47,7 @@ public class Product {
     this.stars = stars;
     this.imageUrl = imageUrl;
     this.tags = tags;
+    this.user = user;
   }
 
   public int getId() {
@@ -87,6 +88,14 @@ public class Product {
 
   public void setUser(User user) {
     this.user = user;
+  }
+
+  public List<Tags> getTags() {
+    return tags;
+  }
+
+  public void setTags(List<Tags> tags) {
+    this.tags = tags;
   }
 
 }

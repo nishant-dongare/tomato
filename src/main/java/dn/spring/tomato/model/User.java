@@ -37,12 +37,11 @@ public class User {
   public User() {
   }
 
-  public User(String name, String email, String passkey, String address, List<Product> products) {
+  public User(String name, String email, String passkey, String address) {
     this.name = name;
     this.email = email;
     this.passkey = passkey;
     this.address = address;
-    this.products = products;
   }
 
   public int getId() {
@@ -69,7 +68,7 @@ public class User {
     return products;
   }
 
-  public void setProduct(List<Product> products) {
+  public void setProductList(List<Product> products) {
     this.products = products;
   }
 
