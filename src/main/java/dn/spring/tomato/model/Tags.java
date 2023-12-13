@@ -28,6 +28,9 @@ public class Tags {
           @JoinColumn(name = "product_id", referencedColumnName = "id") })
   List<Product> products;
 
+  public Tags() {
+  }
+
   public Tags(String tag) {
     this.tag = tag;
   }
