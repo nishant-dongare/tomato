@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RestController;
 import dn.spring.tomato.model.Product;
 import dn.spring.tomato.model.Tags;
 import dn.spring.tomato.model.User;
-import dn.spring.tomato.service.ProductService;
 import dn.spring.tomato.service.UserService;
 
 import java.util.List;
@@ -41,7 +40,7 @@ public class UserController {
   }
 
   @PostMapping("/auth")
-  public User checkUser(@RequestBody UserAuth uauth) {
+  public User checkUser(@RequestBody IUserLogin uauth) {
     User user = userService.getUserByEmailAndPass(uauth.getEmail(), uauth.getPasskey());
     return user == null ? new User() : user;
   }
@@ -67,7 +66,7 @@ public class UserController {
     return userService.saveUser(u1);
   }
 
-  static class UserAuth {
+  static class IUserLogin {
     private String email;
     private String passkey;
 
